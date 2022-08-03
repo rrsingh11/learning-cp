@@ -54,7 +54,34 @@ int main()
 
 
 //Unnordered set 
+// This set can store elements in any order
+    unordered_set<int> ust;
+//All other functions work for unordered set as well.
 
+
+
+
+//Multi-set
+//It helps use to store all the element in the sorted form.
+    multiset <int> ms;
+    ms.insert(1);
+    ms.insert(1);
+    ms.insert(2);
+    ms.insert(2);
+    ms.insert(3);
+// ms => {1,1,2,2,3}
+
+    ms.erase(2);
+//It will delete all the instance of 2 -----------> ms => {1,1,3}
+//All other functions work for multiset as well.
 
     return 0;
 }
+/*
+Average time-complexity of
+    unordered set is O(1)
+    ordered set is O(log n)
+     Wrost case is liner in nature  O(set size)
+
+//When there is no need of ascending/descending then choose unordered set, in case of tle(Time limit exceeded)-> switch to set 
+*/
