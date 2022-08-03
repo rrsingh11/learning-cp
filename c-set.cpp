@@ -1,5 +1,5 @@
 //SET CAN STORE UNIQUE ELEMENTS of THE DEFINED DATATYPE 
-//container_type <data_type> var;
+//SET=> container_type <data_type> var;
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -54,29 +54,34 @@ int main()
 
 
 //Unnordered set 
-// This set can store elements in any order
+    // This set can store elements in any order
     unordered_set<int> ust;
-//All other functions work for unordered set as well.
+    //All other functions work for unordered set as well.
 
 
 
 
 //Multi-set
-//It helps use to store all the element in the sorted form.
+    //It helps use to store all the element in the sorted form.  Uniqueness is ignored.
     multiset <int> ms;
     ms.insert(1);
     ms.insert(1);
     ms.insert(2);
     ms.insert(2);
     ms.insert(3);
-// ms => {1,1,2,2,3}
+    // ms => {1,1,2,2,3}
 
     ms.erase(2);
-//It will delete all the instance of 2 -----------> ms => {1,1,3}
-//All other functions work for multiset as well.
+    //It will delete all the instance of 2 -----------> ms => {1,1,3}
+    //All other functions work for multiset as well.
+
+    //To find how many times the instance occurs
+    ms.count(1); // 2
 
     return 0;
 }
+
+
 /*
 Average time-complexity of
     unordered set is O(1)

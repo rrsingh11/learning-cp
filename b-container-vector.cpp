@@ -1,3 +1,4 @@
+//DYNAMIC ARRAY
 // container_type <data_type> var(`size`,`value`) = { ?,?,?,?...};
 #include <bits/stdc++.h>
 using namespace std;
