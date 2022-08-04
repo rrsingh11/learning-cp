@@ -48,4 +48,5 @@ int main()
 
     return 0;
 }
+//No iterator concept in stack and queue
 //No .begin() .end() operation. Only .top() is possible.
