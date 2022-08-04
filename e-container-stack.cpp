@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     stack<int> st;
-
+    //To insert in stack
     st.push(2);
     st.push(1);
     st.push(3);
@@ -14,7 +14,7 @@ int main()
     
     /*
     Stack:-
-        |   5   |
+        |   5   | <- top
         |   4   |
         |   3   |
         |   1   |
@@ -22,7 +22,7 @@ int main()
     */
 
 
-   //.top() shows the top element
+   //.top() shows the top/last-entered element
    cout << st.top() << endl; // 5
    //.pop() removes the top element
    st.pop(); // removes 5
@@ -38,13 +38,14 @@ int main()
 
 
     //To delete the entire stack we can't use .clear()
-    // while(!st.empty())
-    //     st.pop();
+    while(!st.empty())
+        st.pop();
     //.empty() return true is stack is empty and false if stack is not empty
 
     //To find number of elemnts in the stack
-    cout << endl << st.size() << endl; // 0
+    cout << '\n' << st.size() << endl; // 0
 
 
     return 0;
 }
+//No .begin() .end() operation. Only .top() is possible.
