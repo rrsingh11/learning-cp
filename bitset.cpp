@@ -9,6 +9,8 @@ It only stores 1 or 0
 
 Set bit -> 1
 Unset bit -> 0
+
+Note:- Bitset index backwards ie    n-1 n-2.....3 2 1 0 
 */
 #include<bits/stdc++.h>
 using namespace std;

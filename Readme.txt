@@ -1,8 +1,8 @@
 Containers:-
-    Sequence        ->  Vector , List , Deque , Array
-    Adapter         ->  Queue , Priority-queue , Stack
-    Associative     ->  Set , Multi-set , Map , Multi-map
-    Unordered       ->  Unordered-Set , Unordered-Map
+    Sequence        ->  Vector , List , Deque , Array           {push_back / pop_back}
+    Adapter         ->  Queue , Priority-queue , Stack          {push / pop}
+    Associative     ->  Set , Multi-set , Map , Multi-map       {insert / erase}
+    Unordered       ->  Unordered-Set , Unordered-Map           {insert / erase}
 
 
 
