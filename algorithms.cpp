@@ -89,7 +89,67 @@ int main()
     cout << it-a << endl; // (a-b) / distance(a,b) mostly used to get index => a=iterator b=.begin()
     //lly (it-b.begin()) & (it-vec.begin())
 
-    
+
+
+
+
+
+//Binary Search - To find whether the element is in the container or not
+//binary_search(first-iterator , last-iterator , x ) -Only works on sorted arrays------------------> O(log n)
+    int arr[5] = {1,2,4,7,9};
+    int x = 7;
+    bool flag = binary_search(arr , arr+5 , x);  //lly (b.begin(),b.end(),x) & (vec.begin() , vec.end(),x)
+    //binary_search() returns true if element is in the container or false value is not present
+
+    cout << flag << endl; //True
+//Note: .find() works on all kind does not matter sorted or not but has more time complexity
+
+
+
+
+
+// lower_bound function    ----------------------> O(log n)
+// lower_bound(first-iterator , last-iterator , x ) - Only works on sorted arrays
+//It returns an iterator pointing to the first element which is "not less" than x. if not present it will point to .end()
+//Basically "equal to" or "just greater" than 'x' 
+    int arr[10] = {1,3,5,5,5,7,8,8,10,15};
+    int p = 5; 
+    int q = 13;
+    int r = 16;
+
+    auto p_it  = lower_bound(arr ,arr+10,p); //Ponits to 5          =>index = 2
+    auto q_it  = lower_bound(arr ,arr+10,q); //Points to 15         =>index = 9
+    auto r_it  = lower_bound(arr ,arr+10,r); //Points to endl()     =>index = 10 
+    //lly (b.begin(),b.end(),x) & (vec.begin() , vec.end(),x)
+    //To print index
+    cout << p_it - arr << endl; //2
+    cout << q_it - arr << endl; //9
+    cout << r_it - arr << endl; //10 
+
+
+
+
+
+//Upper Bound function
+// upper_bound(first-iterator , last-iterator , x ) - Only works on sorted arrays
+//It returns an iterator pointing to the first element which is "just greater" than x. if not present it will point to .end()
+//Basically "just greater" than 'x' 
+    int arr[10] = {1,3,5,5,5,7,8,8,10,15};
+    int p = 5; 
+    int q = 13;
+    int r = 15;
+
+    auto p_it  = upper_bound(arr ,arr+10,p); //Ponits to 7          =>index = 5    
+    auto q_it  = upper_bound(arr ,arr+10,q); //Points to 15         =>index = 9
+    auto r_it  = upper_bound(arr ,arr+10,r); //Points to endl()     =>index = 10 
+    //lly (b.begin(),b.end(),x) & (vec.begin() , vec.end(),x)
+    //To print index
+    cout << p_it - arr << endl; //5
+    cout << q_it - arr << endl; //9
+    cout << r_it - arr << endl; //10 
+
+
+
     return 0;
 }
 
