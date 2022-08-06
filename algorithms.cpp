@@ -10,6 +10,7 @@ int main()
     vector<int> vec = { 9 , 5 , 8 , 3 , 1};
     
 //Sorting -------------->O(nlog n)          =>[)
+    //ASCENDING ORDER
     sort(a , a+n); //{1 , 2 , 3 , 4, 7}
     sort(b.begin() , b.end()); // {2 ,3 , 4 , 5 , 6}
     sort(vec.begin(),vec.end()); // { 1 , 3 , 5 , 8 , 9}
@@ -21,6 +22,21 @@ int main()
         cout << vec[i] << "|";
         cout << endl; 
     }
+
+    //DESCENDING ORDER
+    // use greater<int>() to sort "anything" in descending order
+    sort(a , a+n, greater<int>()); //{7 , 4 , 3 , 2, 1}
+    sort(b.begin() , b.end(),greater<int>()); // {6 ,5 , 4 , 3 , 2}
+    sort(vec.begin(),vec.end(),greater<int>()); // { 9 , 8 , 5 , 3 , 1}
+
+    for(int i=0;i<n;i++)
+    {
+        cout << a[i] << "|";
+        cout << b[i] << "|";
+        cout << vec[i] << "|";
+        cout << endl; 
+    }
+
     //Suppose you need to sort from index 2 to 5
     vector<int> vec = {3, 4, 9, 1, 5};
     sort(vec.begin()+2 , vec.begin()+6); // [2 , 6)  => { 3 , 4 , 1 , 5 , 9}
@@ -28,6 +44,8 @@ int main()
     for(auto it:vec)
         cout << "[2,6) => " <<  it << " ";
     cout << endl;
+
+
 
 
 
@@ -148,6 +166,77 @@ int main()
     cout << q_it - arr << endl; //9
     cout << r_it - arr << endl; //10 
 
+
+
+
+
+
+/*
+    Suppose, string s = "abc"
+    all permutations are as follows:
+        -abc
+        -acb
+        -bac
+        -bca
+        -cab
+        -cba
+*/
+
+// Next permutation -----------------> O(n)
+//next_permutation(first-iterator , last iterator)
+    string s1 ="abc";
+    string s2 = "cba";
+
+    bool ans_s1 = next_permutation(s1.begin(),s1.end()); // now, s-> acb & ans->true 
+    //It will shift the string to next permutation and returns true as it get to change to next step
+    cout << s1 << endl; //acb
+    cout << ans_s1 << endl; // 1 (true)
+
+    bool ans_s2 = next_permutation(s2.begin(),s2.end()); // now, s->abc & ans-> false
+    //There is no new permutation after 'cba'. so it will return false as it does not get to change to new permutation
+    cout << s2 << endl; //abc
+    cout << ans_s2 << endl; // 0 (false)
+
+
+    //To print all the permutation for a permutation 'bca'
+    string str1 = "bca";
+    //for all permutation convert it into 'abc'
+    sort(str1.begin() , str1.end()); //str = abc
+
+    do
+    {
+        cout << str1 << endl;
+    } while (next_permutation(str1.begin(),str1.end()));
+
+
+
+
+// Previous permutation -----------------> O(n)
+//prev_permutation(first-iterator , last iterator)
+    string st1 ="abc";
+    string st2 = "cba";
+
+    bool ans_st1 = prev_permutation(st1.begin(),st1.end()); // now, s-> 'cannot be change to prev permutation' & ans->flase 
+    //There is no new permutation before 'abc'. so it will return false as it does not get to change to new permutation
+    cout << st1 << endl;    //cba
+    cout << ans_st1 << endl;//0 (false)
+
+    bool ans_st2 = prev_permutation(st2.begin(),st2.end()); // now, s->'cab' & ans-> true
+    //It will shift the string to previous permutation and returns true as it get to change to next step
+    cout << st2 << endl;    //cab
+    cout << ans_st2 << endl;    //1 (true)
+
+
+    //To print all the permutation for a permutation 'bca'
+    string str2 = "bca";
+    //for all permutation convert it into 'cba'
+    sort(str2.begin() , str2.end(),greater<int>()); //str = cba
+
+    do
+    {
+        cout << str2 << endl;
+    } while (prev_permutation(str2.begin(),str2.end()));
+    
 
 
     return 0;
